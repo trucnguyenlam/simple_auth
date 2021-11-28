@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-//import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -18,9 +17,9 @@ public class WebAuthenticatorActivity extends Activity {
     WebView webview;
     public static String UserAgent = "";
 
-    public static HashMap<String,WebAuthenticator> States = new HashMap<>();
-    public static void presentAuthenticator(Context context, WebAuthenticator authenticator)
-    {
+    public static HashMap<String, WebAuthenticator> States = new HashMap<>();
+
+    public static void presentAuthenticator(Context context, WebAuthenticator authenticator) {
         String stateKey = UUID.randomUUID().toString();
         WebAuthenticatorActivity.States.put(stateKey, authenticator);
         Intent i = new Intent(context, WebAuthenticatorActivity.class);
@@ -30,20 +29,19 @@ public class WebAuthenticatorActivity extends Activity {
     }
 
     WebAuthenticator authenticator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Object lastNonConfigurationInstance = getLastNonConfigurationInstance();
-        if(lastNonConfigurationInstance != null && lastNonConfigurationInstance.getClass().isInstance(WebAuthenticator.class))
-        {
-            authenticator = (WebAuthenticator)lastNonConfigurationInstance;
+        if (lastNonConfigurationInstance != null && lastNonConfigurationInstance.getClass().isInstance(WebAuthenticator.class)) {
+            authenticator = (WebAuthenticator) lastNonConfigurationInstance;
         }
         Intent intent = getIntent();
-        if(authenticator == null && intent.hasExtra("StateKey"))
-        {
+        if (authenticator == null && intent.hasExtra("StateKey")) {
             String key = intent.getStringExtra("StateKey");
             authenticator = States.get(key);
-            authenticator.addListener(authenticator.new CompleteNotifier(){
+            authenticator.addListener(authenticator.new CompleteNotifier() {
                 @Override
                 public void onComplete() {
                     webview.stopLoading();
@@ -52,8 +50,7 @@ public class WebAuthenticatorActivity extends Activity {
             });
             States.remove(key);
         }
-        if(authenticator == null)
-        {
+        if (authenticator == null) {
             finish();
             return;
         }
@@ -65,16 +62,14 @@ public class WebAuthenticatorActivity extends Activity {
 // see https://gitlab.com/trucnguyenlam/calibre_sync/-/wikis/Simple-auth-flutter-package
 //        CookieManager.getInstance().removeAllCookies(null);
 //        CookieManager.getInstance().flush();
-        if(UserAgent != null && !UserAgent.isEmpty())
-        {
+        if (UserAgent != null && !UserAgent.isEmpty()) {
             settings.setUserAgentString(UserAgent);
             settings.setLoadWithOverviewMode(true);
         }
         settings.setJavaScriptEnabled(true);
         webview.setWebViewClient(new Client(this));
         setContentView(webview);
-        if(savedInstanceState != null)
-        {
+        if (savedInstanceState != null) {
             webview.restoreState(savedInstanceState);
         }
         webview.loadUrl(authenticator.initialUrl);
@@ -97,19 +92,17 @@ public class WebAuthenticatorActivity extends Activity {
         webview.saveState(outState);
     }
 
-    class Client extends WebViewClient
-    {
+    class Client extends WebViewClient {
         private WebAuthenticatorActivity activity;
 
-        Client(WebAuthenticatorActivity activity)
-        {
+        Client(WebAuthenticatorActivity activity) {
 
             this.activity = activity;
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            activity.authenticator.checkUrl(url,false);
+            activity.authenticator.checkUrl(url, false);
             //activity.webview.setEnabled(false);
         }
 
@@ -117,7 +110,7 @@ public class WebAuthenticatorActivity extends Activity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             //activity.webview.setEnabled(true);
-            activity.authenticator.checkUrl(url,false);
+            activity.authenticator.checkUrl(url, false);
         }
     }
 

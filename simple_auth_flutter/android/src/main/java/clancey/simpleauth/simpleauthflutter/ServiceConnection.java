@@ -15,6 +15,7 @@
 package clancey.simpleauth.simpleauthflutter;
 
 import android.content.ComponentName;
+
 import androidx.browser.customtabs.CustomTabsClient;
 import androidx.browser.customtabs.CustomTabsServiceConnection;
 
