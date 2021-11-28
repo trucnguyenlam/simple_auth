@@ -19,6 +19,7 @@ class OAuthApi extends AuthenticatedApi {
   bool scopesRequired = true;
   List<String>? scopes;
   bool forceRefresh = false;
+  bool useEmbeddedBrowser = false;
 
   OAuthApi(identifier, this.clientId, this.clientSecret, this.tokenUrl,
       this.authorizationUrl, this.redirectUrl,
@@ -65,7 +66,7 @@ class OAuthApi extends AuthenticatedApi {
             (account.expiresIn != null && account.expiresIn! <= 0))) {
       var valid = account.isValid();
       if (!valid || forceRefresh) {
-        //If there is no interent, give them the current expired account
+        //If there is no internet, give them the current expired account
         if (!await pingUrl(tokenUrl!)) {
           return account;
         }

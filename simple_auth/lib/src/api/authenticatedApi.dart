@@ -62,22 +62,27 @@ abstract class AuthenticatedApi extends Api {
 
   ///This should not be called, it is used to cache the account locally
   Future saveAccountToCache(Account account) async {
-    var data = account.toJson();
-    var json = Convert.jsonEncode(data);
-    await _authStorage.write(key: identifier, value: json);
+    // NOTE: not using cache to allow multiple logins
+    // see: https://gitlab.com/trucnguyenlam/calibre_sync/-/wikis/Simple-auth-flutter-package
+    // var data = account.toJson();
+    // var json = Convert.jsonEncode(data);
+    // await _authStorage.write(key: identifier, value: json);
   }
 
   ///This should not be called, it is used to cache the account locally
   Future<T?> loadAccountFromCache<T extends Account>() async {
-    var json = await _authStorage.read(key: identifier);
-    if (json == null || json == '') return null;
-    try {
-      var data = Convert.jsonDecode(json);
-      return getAccountFromMap<T>(data);
-    } catch (exception) {
-      print(exception);
-      return null;
-    }
+    return null;
+    // NOTE: not using cache to allow multiple logins
+    // see: https://gitlab.com/trucnguyenlam/calibre_sync/-/wikis/Simple-auth-flutter-package
+    // var json = await _authStorage.read(key: identifier);
+    // if (json == null || json == '') return null;
+    // try {
+    //   var data = Convert.jsonDecode(json);
+    //   return getAccountFromMap<T>(data);
+    // } catch (exception) {
+    //   print(exception);
+    //   return null;
+    // }
   }
 
   getAccountFromMap<T extends Account>(Map<String, dynamic> data) =>

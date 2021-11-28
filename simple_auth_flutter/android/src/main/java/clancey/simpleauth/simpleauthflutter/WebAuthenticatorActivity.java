@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.webkit.CookieManager;
+//import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -61,8 +61,10 @@ public class WebAuthenticatorActivity extends Activity {
         webview = new WebView(this);
 
         WebSettings settings = webview.getSettings();
-        CookieManager.getInstance().removeAllCookies(null);
-        CookieManager.getInstance().flush();
+// NOTE: there is no need to clear cookies,
+// see https://gitlab.com/trucnguyenlam/calibre_sync/-/wikis/Simple-auth-flutter-package
+//        CookieManager.getInstance().removeAllCookies(null);
+//        CookieManager.getInstance().flush();
         if(UserAgent != null && !UserAgent.isEmpty())
         {
             settings.setUserAgentString(UserAgent);

@@ -23,6 +23,7 @@ export 'src/providers/amazon.dart';
 export 'src/providers/azureAD.dart';
 export 'src/providers/azureADV2.dart';
 export 'src/providers/dropbox.dart';
+export 'src/providers/pcloud.dart';
 export 'src/providers/facebook.dart';
 export 'src/providers/github.dart';
 export 'src/providers/google.dart';

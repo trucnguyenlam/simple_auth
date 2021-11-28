@@ -11,7 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  simple_auth: ^2.0.10
+  simple_auth:
+    path: ../simple_auth
 flutter:
   plugin:
     platforms:
