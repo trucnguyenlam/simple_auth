@@ -39,16 +39,17 @@ class OAuthAccount extends Account {
     token = null;
   }
 
-  factory OAuthAccount.fromJson(Map<String, dynamic> json) =>
-      OAuthAccount(json["identifier"],
-          tokenType: json["tokenType"],
-          idToken: json["idToken"],
-          token: json["token"],
-          created: DateTime.parse(json["created"]),
-          expiresIn: json["expiresIn"],
-          refreshToken: json["refreshToken"],
-          scope: new List<String>.from(json["scope"]),
-          userData: new Map<String, String>.from(json["userData"]));
+  factory OAuthAccount.fromJson(Map<String, dynamic> json) => OAuthAccount(
+        json["identifier"],
+        tokenType: json["tokenType"],
+        idToken: json["idToken"],
+        token: json["token"],
+        created: DateTime.parse(json["created"]),
+        expiresIn: json["expiresIn"],
+        refreshToken: json["refreshToken"],
+        scope: new List<String>.from(json["scope"]),
+        userData: new Map<String, String>.from(json["userData"]),
+      );
 
   @override
   Map<String, dynamic> toJson() => {
@@ -60,6 +61,6 @@ class OAuthAccount extends Account {
         "expiresIn": expiresIn,
         "refreshToken": refreshToken,
         "scope": scope,
-        "tokenType": tokenType ?? "Bearer"
+        "tokenType": tokenType ?? "Bearer",
       };
 }

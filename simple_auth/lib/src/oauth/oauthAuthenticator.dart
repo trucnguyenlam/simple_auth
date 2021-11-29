@@ -1,16 +1,17 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
-import "package:simple_auth/simple_auth.dart";
+
 import 'package:crypto/crypto.dart';
+import "package:simple_auth/simple_auth.dart";
 
 class OAuthAuthenticator extends WebAuthenticator {
   String? clientSecret;
   String? verifier;
   bool? usePkce;
   String? tokenUrl;
-  OAuthAuthenticator(String? identifier, String? clientId, this.clientSecret,
-      this.tokenUrl, String? baseUrl, String? redirectUrl,
+
+  OAuthAuthenticator(String? identifier, String? clientId, this.clientSecret, this.tokenUrl, String? baseUrl, String? redirectUrl,
       [List<String>? scopes, this.usePkce = false]) {
     this.clientId = clientId;
     this.baseUrl = baseUrl;
@@ -18,12 +19,14 @@ class OAuthAuthenticator extends WebAuthenticator {
     this.identifier = identifier;
     this.scope = scopes ?? <String>[];
   }
+
   OAuthAuthenticator.empty();
+
   @override
   Future<Map<String, dynamic>> getTokenPostData(String? clientSecret) async {
     var map = await super.getTokenPostData(clientSecret);
     map["redirect_uri"] = redirectUrl;
-    if (usePkce!){
+    if (usePkce!) {
       map["code_verifier"] = verifier;
     }
 
@@ -33,7 +36,7 @@ class OAuthAuthenticator extends WebAuthenticator {
   @override
   Future resetAuthenticator() {
     // Generated a new code verifier at the beginning of the authorize flow
-    if (usePkce!){
+    if (usePkce!) {
       verifier = _generateCodeVerifier();
     }
     return super.resetAuthenticator();
@@ -55,7 +58,7 @@ class OAuthAuthenticator extends WebAuthenticator {
     String text = "";
     String allowed = "-._~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {
-      text += allowed[_random.nextInt(allowed.length-1)];
+      text += allowed[_random.nextInt(allowed.length - 1)];
     }
     return text;
   }
