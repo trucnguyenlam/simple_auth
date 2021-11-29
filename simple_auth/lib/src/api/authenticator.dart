@@ -21,11 +21,13 @@ abstract class Authenticator {
 
   ///Cancels the current authentication request.
   void cancel() {
-    hasCompleted = true;
-    _completer.completeError(CancelledException());
+    if (!_completer.isCompleted) {
+      hasCompleted = true;
+      _completer.completeError(CancelledException());
+    }
   }
 
-  ///Call this when you recieve the Auth token.
+  ///Call this when you receive the Auth token.
   void foundAuthCode(String? authCode) {
     this.authCode = authCode;
     hasCompleted = true;
@@ -34,7 +36,9 @@ abstract class Authenticator {
 
   ///Cancels the request with an error message.
   void onError(String error) {
-    hasCompleted = true;
-    _completer.completeError(new Exception(error));
+    if (!_completer.isCompleted) {
+      hasCompleted = true;
+      _completer.completeError(new Exception(error));
+    }
   }
 }

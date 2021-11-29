@@ -18,6 +18,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.browser.customtabs.CustomTabsClient;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsServiceConnection;
@@ -37,10 +38,10 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
     /**
      * Opens the URL on a Custom Tab if possible. Otherwise fallsback to opening it on a WebView.
      *
-     * @param activity The host activity.
+     * @param activity         The host activity.
      * @param customTabsIntent a CustomTabsIntent to be used if Custom Tabs is available.
-     * @param uri the Uri to be opened.
-     * @param fallback a CustomTabFallback to be used if Custom Tabs is not available.
+     * @param uri              the Uri to be opened.
+     * @param fallback         a CustomTabFallback to be used if Custom Tabs is not available.
      */
     public static void openCustomTab(Activity activity,
                                      CustomTabsIntent customTabsIntent,
@@ -62,6 +63,7 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
 
     /**
      * Unbinds the Activity from the Custom Tabs Service.
+     *
      * @param activity the activity that is connected to the service.
      */
     public void unbindCustomTabsService(Activity activity) {
@@ -88,6 +90,7 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
 
     /**
      * Register a Callback to be called when connected or disconnected from the Custom Tabs Service.
+     *
      * @param connectionCallback
      */
     public void setConnectionCallback(ConnectionCallback connectionCallback) {
@@ -96,6 +99,7 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
 
     /**
      * Binds the Activity to the Custom Tabs Service.
+     *
      * @param activity the activity to be binded to the service.
      */
     public void bindCustomTabsService(Activity activity) {
@@ -109,8 +113,8 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
     }
 
     /**
-     * @see {@link CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)}.
      * @return true if call to mayLaunchUrl was accepted.
+     * @see {@link CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)}.
      */
     public boolean mayLaunchUrl(Uri uri, Bundle extras, List<Bundle> otherLikelyBundles) {
         if (mClient == null) return false;
@@ -156,9 +160,8 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
      */
     public interface CustomTabFallback {
         /**
-         *
          * @param activity The Activity that wants to open the Uri.
-         * @param uri The uri to be opened by the fallback.
+         * @param uri      The uri to be opened by the fallback.
          */
         void openUri(Context activity, Uri uri);
     }

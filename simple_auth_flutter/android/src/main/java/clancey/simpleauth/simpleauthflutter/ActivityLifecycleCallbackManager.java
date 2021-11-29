@@ -8,6 +8,7 @@ class ActivityLifecycleCallbackManager implements Application.ActivityLifecycleC
 
 
     public Activity CurrentActivity;
+
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         CurrentActivity = activity;
@@ -15,7 +16,7 @@ class ActivityLifecycleCallbackManager implements Application.ActivityLifecycleC
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        if(activity == CurrentActivity)
+        if (activity == CurrentActivity)
             CurrentActivity = null;
     }
 
@@ -26,7 +27,7 @@ class ActivityLifecycleCallbackManager implements Application.ActivityLifecycleC
 
     @Override
     public void onActivityResumed(Activity activity) {
-        if(!(activity instanceof SimpleAuthCallbackActivity))
+        if (!(activity instanceof SimpleAuthCallbackActivity))
             CustomTabsAuthenticator.onResume();
     }
 

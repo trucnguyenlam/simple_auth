@@ -1,7 +1,6 @@
 import 'package:simple_auth/simple_auth.dart';
 
-Request applyHeader(Request request, String name, String value) =>
-    applyHeaders(request, {name: value});
+Request applyHeader(Request request, String name, String value) => applyHeaders(request, {name: value});
 
 Request applyHeaders(Request request, Map<String, String> headers) {
   final h = new Map.from(request.headers);
@@ -9,11 +8,9 @@ Request applyHeaders(Request request, Map<String, String> headers) {
   return request.replace(headers: h as Map<String, String?>?);
 }
 
-Request addParameter(Request request, String name, dynamic value) =>
-    addParametersToRequest(request, {name: value});
+Request addParameter(Request request, String name, dynamic value) => addParametersToRequest(request, {name: value});
 
-Request addParametersToRequest(
-    Request request, Map<String, dynamic> parameters) {
+Request addParametersToRequest(Request request, Map<String, dynamic> parameters) {
   final h = new Map.from(request.parameters);
   h.addAll(parameters);
   return request.replace(parameters: h as Map<String, dynamic>?);

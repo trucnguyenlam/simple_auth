@@ -1,45 +1,37 @@
 import 'dart:async';
-
-import 'package:simple_auth/simple_auth.dart';
-import "package:http/http.dart" as http;
 import "dart:convert" as Convert;
+
+import "package:http/http.dart" as http;
+import 'package:simple_auth/simple_auth.dart';
 
 class GoogleApi extends OAuthApi {
   bool? isUsingNative;
+
   GoogleApi(String identifier, String clientId, String redirectUrl,
-      {String clientSecret = "native",
-      List<String>? scopes,
-      http.Client? client,
-      Converter? converter,
-      AuthStorage? authStorage})
-      : super.fromIdAndSecret(
-            identifier, _cleanseClientId(clientId), clientSecret,
-            client: client,
-            scopes: scopes,
-            converter: converter,
-            authStorage: authStorage) {
+      {String clientSecret = "native", List<String>? scopes, http.Client? client, Converter? converter, AuthStorage? authStorage})
+      : super.fromIdAndSecret(identifier, _cleanseClientId(clientId), clientSecret,
+            client: client, scopes: scopes, converter: converter, authStorage: authStorage) {
     this.tokenUrl = "https://accounts.google.com/o/oauth2/token";
     this.authorizationUrl = "https://accounts.google.com/o/oauth2/auth";
     this.redirectUrl = redirectUrl;
     this.scopes = scopes ??
         [
           "https://www.googleapis.com/auth/userinfo.email",
-          "https://www.googleapis.com/auth/userinfo.profile"
+          "https://www.googleapis.com/auth/userinfo.profile",
         ];
   }
 
-  static String _cleanseClientId(String clientid) =>
-      clientid.replaceAll(".apps.googleusercontent.com", "");
-  static String getGoogleClientId(String clientId) =>
-      "${_cleanseClientId(clientId)}.apps.googleusercontent.com";
+  static String _cleanseClientId(String clientid) => clientid.replaceAll(".apps.googleusercontent.com", "");
+
+  static String getGoogleClientId(String clientId) => "${_cleanseClientId(clientId)}.apps.googleusercontent.com";
+
   @override
-  Authenticator getAuthenticator() => GoogleAuthenticator(identifier, clientId,
-      clientSecret, tokenUrl, authorizationUrl, redirectUrl, scopes);
+  Authenticator getAuthenticator() =>
+      GoogleAuthenticator(identifier, clientId, clientSecret, tokenUrl, authorizationUrl, redirectUrl, scopes);
 
   /// Makes an API call to google to get the users profile.
   Future<GoogleUser> getUserProfile() async {
-    var request = new Request(HttpMethod.Get,
-        "https://www.googleapis.com/oauth2/v1/userinfo?alt=json");
+    var request = new Request(HttpMethod.Get, "https://www.googleapis.com/oauth2/v1/userinfo?alt=json");
     var resp = await send(request);
     var json = Convert.jsonDecode(resp.body);
     return GoogleUser.fromJson(json);
@@ -47,10 +39,9 @@ class GoogleApi extends OAuthApi {
 }
 
 class GoogleAuthenticator extends OAuthAuthenticator {
-  GoogleAuthenticator(String? identifier, String? clientId, String? clientSecret,
-      String? tokenUrl, String? baseUrl, String? redirectUrl, List<String>? scopes)
-      : super(identifier, clientId, clientSecret, tokenUrl, baseUrl,
-            redirectUrl) {
+  GoogleAuthenticator(String? identifier, String? clientId, String? clientSecret, String? tokenUrl, String? baseUrl,
+      String? redirectUrl, List<String>? scopes)
+      : super(identifier, clientId, clientSecret, tokenUrl, baseUrl, redirectUrl) {
     this.scope = scopes;
     useEmbeddedBrowser = false;
     // Set this to false to remove Apple's user consent dialog
@@ -66,8 +57,7 @@ class GoogleAuthenticator extends OAuthAuthenticator {
   }
 
   String? getRedirectUrl() {
-    if (!useEmbeddedBrowser!)
-      return "com.googleusercontent.apps.${this.clientId}:/oauthredirect";
+    if (!useEmbeddedBrowser!) return "com.googleusercontent.apps.${this.clientId}:/oauthredirect";
     return super.redirectUrl;
   }
 
@@ -85,8 +75,8 @@ class GoogleApiKeyApi extends GoogleApi {
   AuthLocation authLocation;
   String apiKey;
   String authKey;
-  GoogleApiKeyApi(
-      String identifier, this.apiKey, String clientId, String redirectUrl,
+
+  GoogleApiKeyApi(String identifier, this.apiKey, String clientId, String redirectUrl,
       {this.authKey = "key",
       this.authLocation = AuthLocation.query,
       String clientSecret = "native",
@@ -95,11 +85,8 @@ class GoogleApiKeyApi extends GoogleApi {
       Converter? converter,
       AuthStorage? authStorage})
       : super(identifier, clientId, redirectUrl,
-            clientSecret: clientSecret,
-            client: client,
-            scopes: scopes,
-            converter: converter,
-            authStorage: authStorage) {}
+            clientSecret: clientSecret, client: client, scopes: scopes, converter: converter, authStorage: authStorage) {}
+
   @override
   Future<Request> interceptRequest(Request request) async {
     Request req = request;
@@ -131,6 +118,7 @@ class GoogleUser implements JsonSerializable {
   String? picture;
   String? gender;
   String? locale;
+
   GoogleUser(
       {this.id,
       this.email,
@@ -142,6 +130,7 @@ class GoogleUser implements JsonSerializable {
       this.picture,
       this.gender,
       this.locale});
+
   factory GoogleUser.fromJson(Map<String, dynamic> json) => new GoogleUser(
       id: json["id"],
       email: json["email"],

@@ -1,5 +1,6 @@
 import "dart:async";
 import 'dart:math';
+
 import "package:simple_auth/simple_auth.dart";
 import "package:simple_auth/src/utils.dart";
 
@@ -10,9 +11,11 @@ abstract class WebAuthenticator extends Authenticator {
   bool useNonce = false;
   int nonceLength = 8;
   String? _redirectUrl;
+
   String? get redirectUrl => _redirectUrl;
   bool? useEmbeddedBrowser = false;
   bool useSSO = true;
+
   set redirectUrl(String? value) {
     this._redirectUrl = value;
     if (value?.isNotEmpty ?? false)
@@ -49,11 +52,7 @@ abstract class WebAuthenticator extends Authenticator {
 
   ///Gets the URL Parameters that will be used for the login page.
   Future<Map<String, dynamic>> getInitialUrlQueryParameters() async {
-    var data = {
-      "client_id": clientId,
-      "response_type": authCodeKey,
-      "redirect_uri": _redirectUrl
-    };
+    var data = {"client_id": clientId, "response_type": authCodeKey, "redirect_uri": _redirectUrl};
     if (useNonce) {
       data['nonce'] = nonce = generateNonce(nonceLength);
     }
@@ -65,12 +64,7 @@ abstract class WebAuthenticator extends Authenticator {
 
   ///Gets the data that will be posted to swap the auth code for an auth token
   Future<Map<String, dynamic>> getTokenPostData(String? clientSecret) async {
-    var data = {
-      "grant_type": "authorization_code",
-      authCodeKey: authCode,
-      "client_id": clientId,
-      "client_secret": clientSecret
-    };
+    var data = {"grant_type": "authorization_code", authCodeKey: authCode, "client_id": clientId, "client_secret": clientSecret};
     if ((scope?.length ?? 0) > 0) {
       data["scope"] = scope!.join(" ");
     }
