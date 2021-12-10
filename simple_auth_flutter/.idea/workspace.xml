@@ -25,73 +25,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e1fbe33-a01c-4579-b4a3-46553b301d48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../simple_auth/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/annotations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/annotations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/api/account.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/api/account.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/api/api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/api/api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/api/authenticatedApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/api/authenticatedApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/api/authenticator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/api/authenticator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/api/webAuthenticator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/api/webAuthenticator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/apikey/apiKeyApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/apikey/apiKeyApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/authStorage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/authStorage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthAccount.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthAccount.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthAuthenticator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/basic/basicAuthAuthenticator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/converter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/converter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/jsonSerializable.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/jsonSerializable.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthAccount.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthAccount.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthApiKeyApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthApiKeyApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthAuthenticator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthAuthenticator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthResponse.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/oauth/oauthResponse.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/amazon.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/amazon.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/azureAD.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/azureAD.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/azureADV2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/azureADV2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/dropbox.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/dropbox.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/facebook.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/facebook.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/github.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/github.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/google.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/google.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/instagram.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/instagram.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/keycloak.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/keycloak.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/linkedInApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/linkedInApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/providers/microsoftLive.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/providers/microsoftLive.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/request.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/lib/src/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/lib/src/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth/test/simple_auth_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth/test/simple_auth_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/basic_login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/basic_login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/simple_auth_flutter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/simple_auth_flutter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/azureAdTestApi.simple_auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/azureAdTestApi.simple_auth.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/youtubeApi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/youtubeApi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/youtubeApi.simple_auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/api_definitions/youtubeApi.simple_auth.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/lib/models.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_flutter_example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_flutter_example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/lib/simple_auth_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/lib/simple_auth_generator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/lib/src/generator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/test/simple_auth_generator_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/test/simple_auth_generator_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/test/test_apis/services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/test/test_apis/services.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_auth_generator/test/test_file_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_auth_generator/test/test_file_utils.dart" afterDir="false" />
-    </list>
+    <list default="true" id="1e1fbe33-a01c-4579-b4a3-46553b301d48" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/matthewrice/.android/avd/Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Truc Nguyen\.android\avd\Pixel_2_API_19_1.avd]" />
   <component name="FindInProjectRecents">
     <findStrings>
       <find>CancelledException</find>
@@ -107,6 +47,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1sl2BRxTZkgcb8An8sGGfq6Lkuf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -122,22 +63,6 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager" selected="Flutter.example/lib/main.dart">
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -148,6 +73,13 @@
       <option name="filePath" value="$PROJECT_DIR$/example" />
       <option name="scope" value="FOLDER" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
@@ -197,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
