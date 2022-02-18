@@ -23,6 +23,7 @@ export 'src/providers/amazon.dart';
 export 'src/providers/azureAD.dart';
 export 'src/providers/azureADV2.dart';
 export 'src/providers/azureADV3.dart';
+export 'src/providers/boxV1.dart';
 export 'src/providers/dropbox.dart';
 export 'src/providers/dropboxV2.dart';
 export 'src/providers/pcloud.dart';
